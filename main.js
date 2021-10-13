@@ -25,7 +25,9 @@ function getPizzaType(array) {
 // ===========
 // Hint: find the method that will allow you to set the decimals.
 function addTax(array) {
-    array.splice(2,0,parseFloat((array[1] * 0.0925).toPrecision(1)));
+    let tax = (array[1] * 0.0925);
+    tax = Math.ceil(tax * 100)/100;
+    array.splice(2,0,tax);
     return array;
 }
 
